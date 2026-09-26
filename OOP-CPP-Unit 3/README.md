@@ -5,7 +5,7 @@
 | Details | Information |
 |---|---|
 | **Student Name** | Prathmesh Birelliwar |
-| **PRN** | ZPRN 125YAD1309 |
+| **PRN** | ZPRN 125UAD1309 |
 | **Class / Division** | FY-B.Tech / Division B |
 | **Course Name** | Object-Oriented Programming with C++ |
 | **Unit** | Unit III – Polymorphism |
