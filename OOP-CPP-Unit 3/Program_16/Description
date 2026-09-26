@@ -1,0 +1,105 @@
+C++ Employee Payroll Mini-Project
+Description
+
+This C++ program demonstrates run-time polymorphism using an employee payroll system.
+
+The program uses an abstract Employee class as a common base class. Two derived classes, PermanentEmployee and ContractEmployee, calculate salaries differently by overriding the calculateSalary() function.
+
+Classes Used
+1. Employee Class
+
+The Employee class is the abstract base class.
+
+employeeId stores the employee ID.
+name stores the employee's name.
+The constructor initializes the employee details.
+calculateSalary() is a pure virtual function.
+displayBasicDetails() displays the employee ID and name.
+It contains a virtual destructor.
+
+The pure virtual function is:
+
+virtual double calculateSalary() const = 0;
+
+This makes Employee an abstract class.
+
+2. PermanentEmployee Class
+
+The PermanentEmployee class inherits from Employee.
+
+basicSalary stores the basic salary.
+allowance stores the additional allowance.
+The constructor initializes the employee details and salary information.
+calculateSalary() returns the basic salary plus allowance.
+
+Formula:
+
+Salary = Basic Salary + Allowance
+
+For Asha:
+
+40000 + 8000 = 48000
+3. ContractEmployee Class
+
+The ContractEmployee class also inherits from Employee.
+
+hourlyRate stores the payment per hour.
+hoursWorked stores the number of hours worked.
+calculateSalary() calculates the salary based on hours worked.
+
+Formula:
+
+Salary = Hourly Rate × Hours Worked
+
+For Vikas:
+
+500 × 80 = 40000
+
+printPaySlip() Function
+
+The function:
+
+void printPaySlip(const Employee& employee)
+
+accepts a base-class reference.
+
+It displays the employee's basic details and calls:
+
+employee.calculateSalary();
+
+Since calculateSalary() is virtual, the appropriate derived-class implementation is selected at run time.
+
+Main Function
+
+In the main() function, two employee objects are created:
+
+Permanent Employee → ID 101, Name Asha
+Contract Employee → ID 102, Name Vikas
+
+Both objects are passed to the printPaySlip() function.
+
+Output
+Employee ID: 101
+Name: Asha
+Salary: Rs. 48000
+
+Employee ID: 102
+Name: Vikas
+Salary: Rs. 40000
+OOP Concept Used
+
+Run-Time Polymorphism — Abstract Class and Virtual Function
+
+                    Employee
+                       |
+              calculateSalary()
+                       |
+             +---------+---------+
+             |                   |
+     PermanentEmployee    ContractEmployee
+             |                   |
+      Basic + Allowance    Rate × Hours
+             |                   |
+          Rs. 48000           Rs. 40000
+
+The Employee class provides a common interface, while each derived class provides its own salary calculation. This demonstrates run-time polymorphism using an abstract class and a pure virtual function.

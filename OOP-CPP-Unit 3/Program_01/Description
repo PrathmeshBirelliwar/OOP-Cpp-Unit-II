@@ -1,0 +1,60 @@
+C++ Function Overloading
+Description
+
+This C++ program demonstrates function overloading using multiple add() functions.
+
+The add() functions have the same name but different parameter lists. The compiler selects the appropriate function based on the number and type of arguments passed.
+
+Classes Used
+
+No class is used in this program.
+
+The program demonstrates function overloading using three functions.
+
+1. add(int, int) Function
+
+The add() function accepts two integer values.
+
+It takes two int parameters.
+It returns their sum.
+It is called when two integer values are passed.
+2. add(double, double) Function
+
+The second add() function accepts two decimal values.
+
+It takes two double parameters.
+It returns their sum.
+It is called when two decimal values are passed.
+3. add(int, int, int) Function
+
+The third add() function accepts three integer values.
+
+It takes three int parameters.
+It returns their sum.
+It is called when three integer values are passed.
+Main Function
+
+In the main() function, the overloaded add() functions are called with different arguments:
+
+10, 20 → adds two integers.
+2.5, 3.7 → adds two double values.
+10, 20, 30 → adds three integers.
+
+The results are then displayed on the screen.
+
+Output
+Sum of two integers: 30
+Sum of two doubles: 6.2
+Sum of three integers: 60
+OOP Concept Used
+
+Compile-Time Polymorphism — Function Overloading
+
+              add()
+          /     |      \
+         /      |       \
+ add(int,int)   |   add(int,int,int)
+                |
+        add(double,double)
+
+The same function name add() performs different operations depending on the parameters passed. This is called function overloading.

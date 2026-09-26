@@ -1,0 +1,65 @@
+C++ Virtual Destructor
+Description
+
+This C++ program demonstrates the use of a virtual destructor in inheritance.
+
+The Base class contains a virtual destructor, and the Derived class has its own destructor. A Base class pointer is used to point to a Derived object. When the object is deleted through the base pointer, both the derived and base destructors are executed correctly.
+
+Classes Used
+1. Base Class
+
+The Base class is the base class.
+
+It contains a virtual destructor.
+The destructor displays "Base destructor".
+The virtual keyword ensures proper destruction of derived objects through a base pointer.
+
+The destructor is:
+
+virtual ~Base()
+{
+    cout << "Base destructor" << endl;
+}
+2. Derived Class
+
+The Derived class inherits from the Base class.
+
+It contains its own destructor.
+The destructor displays "Derived destructor".
+The override keyword indicates that it overrides the virtual destructor of the base class.
+Main Function
+
+In the main() function, a Derived object is created using a base-class pointer:
+
+Base* pointer = new Derived();
+
+The object is then deleted using:
+
+delete pointer;
+
+Because the base destructor is virtual, the destructors are called in the correct order.
+
+Output
+Derived destructor
+Base destructor
+OOP Concept Used
+
+Virtual Destructor
+
+              Base
+               |
+       virtual destructor
+               |
+               ↓
+            Derived
+               |
+       Derived destructor
+               |
+               ↓
+          delete pointer
+               |
+        +------+------+
+        ↓             ↓
+ Derived destructor   Base destructor
+
+A virtual destructor ensures that when a derived object is deleted through a base-class pointer, the derived destructor executes first, followed by the base destructor.
